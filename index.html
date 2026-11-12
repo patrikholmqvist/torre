@@ -1,116 +1,267 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radhus i Torre de la Horadada</title>
+    
+    <!-- Importerar Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
+    
+    <!-- Importerar Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
-    <header class="bg-white shadow-sm">
-        <div class="max-w-5xl mx-auto px-4 py-12 text-center">
-            <h1 class="text-4xl font-light text-blue-900 mb-4">Radhus i Torre de la Horadada</h1>
-            <p class="text-lg text-gray-500">Modernt boende nära stränder och strandpromenad</p>
+    <!-- Tailwind Konfiguration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'med-blue': '#0284c7', // Medelhavsblå
+                        'med-sand': '#fef3c7', // Sand
+                        'med-dark': '#1e293b', // Mörkgrå för text
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-med-dark font-sans antialiased leading-relaxed">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#hem" class="font-serif text-2xl text-med-blue font-semibold">
+                    Torre de la Horadada
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#om" class="text-gray-600 hover:text-med-blue transition-colors font-medium">Om bostaden</a>
+                    <a href="#galleri" class="text-gray-600 hover:text-med-blue transition-colors font-medium">Galleri</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Sektion -->
+    <header id="hem" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-med-blue overflow-hidden">
+        <!-- Dekorativ bakgrund -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://placehold.co/1920x1080/0284c7/ffffff?text=+" alt="Bakgrund" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6 drop-shadow-md">
+                Fantastiskt Radhus i Torre de la Horadada
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto text-blue-50">
+                Ett rymligt och modernt drömboende på tre våningar, nära underbara stränder och soliga strandpromenader.
+            </p>
+            <a href="#galleri" class="inline-block bg-white text-med-blue hover:bg-med-sand hover:text-med-dark transition-colors px-8 py-3 rounded-full font-semibold shadow-lg">
+                Se bilderna
+            </a>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-12">
-        <section class="bg-white p-8 rounded-lg shadow-sm mb-12">
-            <h2 class="text-2xl font-light text-blue-900 mb-6">Om huset</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600 leading-relaxed">
-                <div>
-                    <p class="mb-4">Mycket rymligt och trevligt radhus med 3 sovrum samt 2 badrum i ett modernt område nära fina stränder samt en fantastiskt strandpromenad.</p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>3 sovrum (1 med dubbelsäng, 2 med 2 enkelsängar per rum).</li>
-                        <li>2 kompletta badrum, båda med dusch samt golvvärme.</li>
-                        <li>Välutrustat kök med diskmaskin, mikrovågsugn, vattenfilter (drickbart kranvatten).</li>
-                        <li>Vardagsrum inrett med matplats samt soffa och TV.</li>
-                        <li>AC finns i alla rum och internet via fiber.</li>
-                    </ul>
+    <!-- Om Huset -->
+    <section id="om" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-med-dark mb-4">Boendet & Bekvämligheter</h2>
+                <div class="w-24 h-1 bg-med-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Ikon 1 -->
+                <div class="bg-gray-50 p-6 rounded-2xl text-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-med-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Tre våningar</h3>
+                    <p class="text-gray-600 text-sm">Gott om plats med vardagsrum, 3 sovrum och 2 kompletta badrum med golvvärme.</p>
                 </div>
-                <div>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Stor takterrass med pergola, loungegrupp och matbord för 6 personer (havsutsikt).</li>
-                        <li>Stor terrass utanför master bedroom med loungegrupp och utsikt över poolen.</li>
-                        <li>Uteplats på entréplan med matgrupp, grill och delvis tak/markis (utgång till pool).</li>
-                        <li>Gemensamt poolområde med solstolar och pergola.</li>
-                        <li>Närmsta strand ca 350 meter bort.</li>
-                        <li>Garageplats i källaren ingår.</li>
-                    </ul>
+                <!-- Ikon 2 -->
+                <div class="bg-gray-50 p-6 rounded-2xl text-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-med-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Modern komfort</h3>
+                    <p class="text-gray-600 text-sm">Välutrustat kök med vattenfilter, AC i alla rum och snabbt fiber-internet.</p>
+                </div>
+                <!-- Ikon 3 -->
+                <div class="bg-gray-50 p-6 rounded-2xl text-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-med-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Uteplatser</h3>
+                    <p class="text-gray-600 text-sm">Uteplats med grill, balkong, terrass samt en stor takterrass med havsutsikt.</p>
+                </div>
+                <!-- Ikon 4 -->
+                <div class="bg-gray-50 p-6 rounded-2xl text-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-med-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Perfekt läge</h3>
+                    <p class="text-gray-600 text-sm">Garage ingår. 350m till stranden. 30 min till Murcia flygplats, 45 min till Alicante.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2 class="text-2xl font-light text-blue-900 mb-6">Bilder på huset</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- Bildgalleri -->
+    <section id="galleri" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl text-med-dark mb-4">Rundtur i huset</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Välkommen att se dig omkring i vårt vackra radhus och dess omgivningar.</p>
+            </div>
+
+            <!-- CSS Grid med 18 platshållare -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="pool.jpg" alt="Poolområdet" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="vardagsrum.jpg" alt="Vardagsrum och matplats" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="vardagsrum_uteplats.jpg" alt="Vardagsrum med utgång till uteplats" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="trappa.jpg" alt="Trappa och hall" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="takterrass.jpg" alt="Takterrass med loungegrupp" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="takterrass_lounge.jpg" alt="Loungegrupp på takterrass" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="sovrumsterrass.jpg" alt="Terrass utanför master bedroom" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="utsikt_tak.jpg" alt="Vy från takterrass" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="utsikt_balkong.jpg" alt="Vy över området från balkong" class="w-full h-full object-cover">
-                </div>
-                <div class="bg-gray-200 aspect-square rounded overflow-hidden">
-                    <img src="utsikt_pool.jpg" alt="Utsikt över grannskap och pool" class="w-full h-full object-cover">
+                <!-- Befintliga bilder -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="pool.jpg" alt="Poolområdet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Det stora gemensamma poolområdet</p>
+                    </div>
                 </div>
 
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Kök
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Sovrum 1 (Master)
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Sovrum 2
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Sovrum 3
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Badrum 1
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Badrum 2
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Uteplats entré
-                </div>
-                <div class="bg-gray-200 aspect-square rounded flex items-center justify-center text-sm text-gray-500">
-                    Övrigt
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="vardagsrum.jpg" alt="Vardagsrum och matplats" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Ljust vardagsrum med matplats</p>
+                    </div>
                 </div>
 
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="vardagsrum_uteplats.jpg" alt="Vardagsrum med utgång till uteplats" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Vardagsrum med utgång till uteplatsen</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="trappa.jpg" alt="Trappa och hall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Trapphuset som binder samman våningsplanen</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="takterrass.jpg" alt="Takterrass med loungegrupp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Takterrassen med pergola och rymlig soffgrupp</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="takterrass_lounge.jpg" alt="Loungegrupp på takterrass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Sittgrupp i konstrotting på takterrassen</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="sovrumsterrass.jpg" alt="Terrass utanför master bedroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Stor terrass med bekväm loungegrupp i trä</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="utsikt_tak.jpg" alt="Vy från takterrass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Vidsträckt utsikt över området mot havet</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="utsikt_balkong.jpg" alt="Vy över området från balkong" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Utsikt över poolområdet från terrassen</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
+                    <div class="overflow-hidden aspect-[4/3] bg-gray-200">
+                        <img src="utsikt_pool.jpg" alt="Utsikt över grannskap och pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 bg-white">
+                        <p class="text-sm font-semibold text-gray-700">Vy över grannskap och pool från terrassen</p>
+                    </div>
+                </div>
+
+                <!-- Platshållare framtida bilder -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Kök</span>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Sovrum 1 (Master)</span>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Sovrum 2</span>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Sovrum 3</span>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Badrum 1</span>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Badrum 2</span>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Uteplats entré</span>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
+                    <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm font-medium">Övrigt</span>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-blue-900 text-white py-8 text-center mt-12">
-        <p class="text-sm font-light">Radhus Torre de la Horadada</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-10 text-center text-gray-400 text-sm border-t border-gray-800">
+        <p>&copy; 2024 Radhus i Torre de la Horadada.</p>
     </footer>
 
 </body>
