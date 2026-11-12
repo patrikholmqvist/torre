@@ -13,6 +13,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
+    <style>
+        #galleri .grid > div:has(> img[src$=".jpg"]) {
+            display: block;
+            padding: 0;
+            aspect-ratio: auto;
+            border-style: solid;
+        }
+
+        #galleri .grid > div:has(> img[src$=".jpg"]) > svg {
+            display: none;
+        }
+
+        #galleri .grid > div > img[src$=".jpg"] {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        #galleri .grid > div:has(> img[src$=".jpg"]) > span {
+            display: block;
+            padding: 1rem;
+            color: #374151;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    </style>
+
     <!-- Tailwind Konfiguration -->
     <script>
         tailwind.config = {
@@ -215,45 +244,52 @@
                     </div>
                 </div>
 
-                <!-- Platshållare framtida bilder -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Kök</span>
+                    <img src="Badrum nere.jpg" alt="Badrum på nedervåningen" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Badrum på nedervåningen</span>
                 </div>
                 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Sovrum 1 (Master)</span>
+                    <img src="Master bedroom.jpg" alt="Master bedroom" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Master bedroom</span>
                 </div>
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Sovrum 2</span>
+                    <img src="Sovrum 2 Uppe.jpg" alt="Sovrum 2 på övervåningen" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Sovrum 2 på övervåningen</span>
                 </div>
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Sovrum 3</span>
+                    <img src="Sovrum nere.jpg" alt="Sovrum på nedervåningen" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Sovrum på nedervåningen</span>
                 </div>
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Badrum 1</span>
+                    <img src="Loungesoffa takterrass.jpg" alt="Loungesoffa på takterrassen" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Loungesoffa på takterrassen</span>
                 </div>
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Badrum 2</span>
+                    <img src="Terrass nere.jpg" alt="Terrass på nedervåningen" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Terrass på nedervåningen</span>
                 </div>
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Uteplats entré</span>
+                    <img src="Entre.jpg" alt="Entré med uteplats" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Entré med uteplats</span>
                 </div>
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 border-dashed border-2 flex flex-col items-center justify-center p-8 aspect-[4/3] text-gray-400">
                     <svg class="w-10 h-10 mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span class="text-sm font-medium">Övrigt</span>
+                    <img src="Solnedgang Uppe.jpg" alt="Solnedgång från takterrassen" class="w-full rounded-lg object-cover">
+                    <span class="text-sm font-medium">Solnedgång från takterrassen</span>
                 </div>
             </div>
         </div>
